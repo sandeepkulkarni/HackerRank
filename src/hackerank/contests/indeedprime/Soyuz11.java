@@ -1,4 +1,4 @@
-package hackerrank.contests.indeedprime;
+package hackerank.contests.indeedprime;
 
 import java.util.Scanner;
 
