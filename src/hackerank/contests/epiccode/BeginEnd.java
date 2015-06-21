@@ -1,5 +1,7 @@
 package hackerank.contests.epiccode;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class BeginEnd {
@@ -11,12 +13,47 @@ public class BeginEnd {
 		int length = s.nextInt();
 		String inputString = s.next();
 
-		System.out.println(findBeginEndSubstringCount(inputString, length));
+		//System.out.println(findBeginEndSubstringCount(inputString, length));
+		
+		long finalValue = (long) findFunctionCount(inputString, length);
+		System.out.println(finalValue);
 
 		s.close();
 	}
+	
+	private static double findFunctionCount(String inputString, int length){
+		
+		//populate occurenceMap
+		Map<Character, Integer> occurenceMap = new HashMap<Character, Integer>();
+		for(int i = 0; i < inputString.length(); i++){
+			char key = inputString.charAt(i);
+			if(occurenceMap.containsKey(key)){
+				int count = occurenceMap.get(key);
+				occurenceMap.put(key, count+1);				
+			}else{
+				occurenceMap.put(key, 1);
+			}
+		}
+		//System.out.println(occurenceMap);
+		
+		double singleCount = 0;
+		double count = 0;
+		for(Map.Entry<Character, Integer> entry : occurenceMap.entrySet()){
+			if(entry.getValue() == 1){
+				singleCount = singleCount + 1;				
+				inputString = inputString.replace(entry.getKey().toString(), "");
+			}else{
+				double frequency = entry.getValue();
+				count = (count + ((frequency + 1) * (frequency / 2)));
+			}
+		}
+		
+		//System.out.println("Reduced string = "+ inputString + " singleCount = "+singleCount + " count = "+count);
+		
+		return count + singleCount;
+	}
 
-	private static long findBeginEndSubstringCount(String inputString, int length) {
+	/*private static long findBeginEndSubstringCount(String inputString, int length) {
 		StringBuilder sub = new StringBuilder();
 		long count = 0;		
 		for (int i = 0; i < length; i++) {
@@ -34,7 +71,7 @@ public class BeginEnd {
 		}
 		System.out.println(sub.toString());
 		return count;
-	}
+	}*/
 
 }
 
