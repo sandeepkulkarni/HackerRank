@@ -1,4 +1,7 @@
 package hackerank.algorithms.warmup;
+
+import java.util.Scanner;
+
 /**
 Problem Statement
 
@@ -32,8 +35,31 @@ Sample Output
 public class TimeConversion {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Scanner s = new Scanner(System.in);
+		String inputTime = s.next();
+		
+		String[] timeItervals = inputTime.split(":");
+			
+		int hours = Integer.parseInt(timeItervals[0]);
+		int mins = Integer.parseInt(timeItervals[1]);
+		int sec = Integer.parseInt(timeItervals[2].substring(0,2));
+		
+		String am_pm = timeItervals[2].substring(2);
+		
+		if(am_pm.equals("PM") && (hours == 12 && mins == 0 && sec == 0)){
+			hours = hours + 12;
+		}else if(am_pm.equals("PM") && (hours == 12 && (mins > 0 || sec > 0))){
+			hours = 12;
+		}else if(am_pm.equals("PM") && (hours < 12)){
+			hours = hours + 12;
+		}else if(am_pm.equals("AM") && hours == 12){
+			hours = 0;
+		}
+		
+		System.out.println(String.format("%02d", hours) +":"+timeItervals[1]+":"+
+					timeItervals[2].substring(0, 2));		
+		
+		s.close();
 	}
 
 }
