@@ -14,7 +14,6 @@ public class CourseDilemma {
 		
 		//Populate Input Data into Map
 		for(int i=0; i<noOfTestCases; i++){			
-			int noOfCourses = s.nextInt();
 			int noOfRelations = s.nextInt();
 			Map<Integer,Integer> tempMap = new LinkedHashMap<Integer,Integer>();
 			
@@ -60,7 +59,6 @@ public class CourseDilemma {
 			
 			for(Map.Entry<Integer, Integer> caseEntry : caseCourseMap.entrySet()){		
 				//semRequired = 0;
-				int course = caseEntry.getKey();
 				int preReq = caseEntry.getValue();			
 			
 				if(caseCourseMap.containsKey(preReq)){
