@@ -1,7 +1,12 @@
 package hackerank.algorithms.dynamicprogramming;
 
 import java.util.Scanner;
-
+/**
+ Inputs :
+5 6
+1 2 3 4 1
+3 4 1 2 1 3
+ */
 public class LongestCommonSubsequence {
     
     private static void LCS(int[] a, int[] b, int n, int m){
