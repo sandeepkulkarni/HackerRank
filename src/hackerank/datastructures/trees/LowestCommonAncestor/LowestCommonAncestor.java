@@ -114,24 +114,6 @@ class Tree{
 		return (leftLCA != null) ? leftLCA : rightLCA;		
 	}
 
-
-	//Lowest common ancestor : If Tree is Binary Search Tree
-	/*public Node findLCA_BST(Node root, int v1, int v2){
-			if(root == null){
-				return null;
-			}		
-		    //Samller than both
-		    if(root.data < v1 && root.data < v2){
-		        return findLCA_BST(root.right,v1,v2);
-		    }
-		    //Bigger than both
-		    if(root.data > v1 && root.data > v2){
-		        return findLCA_BST(root.left,v1,v2);
-		    }
-		    //else
-		    return root;
-		}*/
-
 }
 
 
