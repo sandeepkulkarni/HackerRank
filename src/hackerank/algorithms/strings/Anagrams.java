@@ -63,6 +63,7 @@ public class Anagrams {
 	
 	
 	public static void main(String[] args){
+		System.out.println("Enter input string: ");
 		Scanner s = new Scanner(System.in);
 		
 		List<String> anagrams = permutation(s.next());
