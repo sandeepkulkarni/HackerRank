@@ -87,7 +87,8 @@ class Tree{
 	//Lowest common ancestor
 	/*Method 2:
 		1) Traverse the tree starting from root. If any of the given nodes (n1 and n2) matches with root, then root is LCA.
-		2) If root doesn’t match with any of the nodes, we recur for left and right subtrees. The node which has n1 present in its one subtree and the n2 present in other subtree is the LCA. 
+		2) If root doesn't match with any of the nodes, we recur for left and right subtrees.
+		   The node which has n1 present in its one subtree and the n2 present in other subtree is the LCA.
 		3) If both nodes lie in left subtree, then left subtree has LCA, otherwise LCA lies in right subtree.
 	 */
 	public Node findLCA(Node node, int n1, int n2) {		
@@ -134,7 +135,7 @@ public class LowestCommonAncestor {
 
 		System.out.println("LCA(4,5) is :");
 		System.out.println("By Method 1");
-		Node lca = tree.findLCA_Simple(tree.root, 4, 5);
+		Node lca = tree.findLCA_Simple(tree.root, 4, 6);
 		System.out.println("\nLCA= "+lca.data);
 
 		System.out.println("\nBy Method 2");
